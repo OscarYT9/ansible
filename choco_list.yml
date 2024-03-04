@@ -1,0 +1,12 @@
+---
+- name: Ejecutar choco list
+  hosts: mis_hosts
+  gather_facts: false
+  tasks:
+    - name: Obtener la lista de paquetes instalados
+      ansible.builtin.shell: choco list --local-only
+      register: chocolatey_packages
+
+    - name: Mostrar la salida de choco list
+      ansible.builtin.debug:
+        var: chocolatey_packages.stdout_lines

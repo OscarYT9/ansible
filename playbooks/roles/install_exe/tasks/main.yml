@@ -1,0 +1,3 @@
+---
+- name: Instalar ejecutable
+  win_shell: C:\Ruta\Al\Ejecutable.exe /opciones

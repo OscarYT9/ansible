@@ -1,0 +1,5 @@
+---
+- name: Instalar Software en PCs
+  hosts: mis_hosts
+  roles:
+    - install_exe
