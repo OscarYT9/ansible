@@ -14,4 +14,3 @@
         actions:
           - path: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
             arguments: ""
-            working_directory: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
