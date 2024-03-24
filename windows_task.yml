@@ -17,8 +17,6 @@
         enabled: yes
         hidden: no
         triggers:
-          - type: boot
-            enabled: yes
           - type: weekly
             days_of_week: Friday
             start_boundary: "2024-03-24T11:00:00"
