@@ -1,12 +1,16 @@
----
-- name: Ejecutar choco list
+- name: Crear tarea programada para abrir una aplicación
   hosts: mis_hosts
-  gather_facts: false
   tasks:
-    - name: Obtener la lista de paquetes instalados
-      ansible.builtin.shell: choco list --local-only
-      register: chocolatey_packages
-
-    - name: Mostrar la salida de choco list
-      ansible.builtin.debug:
-        var: chocolatey_packages.stdout_lines
+    - name: Crear tarea programada
+      win_scheduled_task:
+        name: Resilio Sync abrir2
+        description: Tarea programada para abrir una aplicación
+        state: present
+        enabled: yes
+        hidden: no
+        triggers:
+          - type: boot
+            enabled: yes
+        actions:
+          - path: "C:\Users\FERNANDO\AppData\Roaming\Resilio Sync\Resilio Sync.exe"
+            arguments: ""
