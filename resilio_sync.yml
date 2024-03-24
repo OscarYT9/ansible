@@ -3,9 +3,9 @@
   hosts: mis_hosts
   tasks:
     - name: Run tool.exe
-        win_psexec:
-          command: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
-          interactive: yes
-          session: 1
-          system: true
-          elevated: true
+      win_psexec:
+        command: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
+        interactive: yes
+        session: 1
+        system: true
+        elevated: true
