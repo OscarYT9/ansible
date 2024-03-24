@@ -2,10 +2,6 @@
 - name: Iniciar Resilio Sync
   hosts: mis_hosts
   tasks:
-    - name: Run tool.exe
-      win_psexec:
-        command: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
-        interactive: yes
-        session: 1
-        system: true
-        elevated: true
+    - name: Ejecutar aplicación 1 desde script PowerShell
+      win_shell: |
+        & "C:\Users\FERNANDO\Desktop\Scripts\ejecutar_aplicacion1.ps1"
