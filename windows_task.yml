@@ -1,6 +1,6 @@
 ---
 - name: Programar la ejecución de Resilio Sync en Windows
-  hosts: windows_hosts
+  hosts: mis_hosts
   tasks:
     - name: Crear tarea programada para ejecutar Resilio Sync
       win_scheduled_task:
