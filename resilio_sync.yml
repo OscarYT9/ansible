@@ -3,4 +3,4 @@
   hosts: mis_hosts
   tasks:
     - name: Ejecutar Resilio Sync
-      win_command: win_shell: Start-Process -FilePath "C:\Users\FERNANDO\AppData\Roaming\Resilio Sync\Resilio Sync.exe"
+      win_shell: Start-Process -FilePath "C:\Users\FERNANDO\AppData\Roaming\Resilio Sync\Resilio Sync.exe"
