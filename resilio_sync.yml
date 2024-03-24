@@ -1,0 +1,6 @@
+---
+- name: Iniciar Resilio Sync
+  hosts: mis_hosts
+  tasks:
+    - name: Ejecutar Resilio Sync
+      win_command: "C:\Users\FERNANDO\AppData\Roaming\Resilio Sync\Resilio Sync.exe"
