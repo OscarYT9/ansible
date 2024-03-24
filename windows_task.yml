@@ -1,13 +1,15 @@
-- name: Crear tarea programada en el Programador de tareas de Windows
-  hosts: mis_hosts
+---
+- name: Programar la ejecución de Resilio Sync en Windows
+  hosts: windows_hosts
   tasks:
-    - name: Crear tarea programada
-      community.windows.win_scheduled_task:
-        name: "Ejecutar Resilio Sync"
-        description: "Tarea programada para ejecutar Resilio Sync"
-        actions:
-          - path: "PowerShell.exe"
-            arguments: "-Command 'Start-Process -FilePath \"C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe\"'"
-        trigger:
-          - daily:
-              at: "03:00"
+    - name: Crear tarea programada para ejecutar Resilio Sync
+      win_scheduled_task:
+        name: "Resilio Sync abrir2"
+        description: "Ejecutar Resilio Sync a las 10:00 AM todos los días"
+        executable: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"  # Reemplaza con la ruta correcta de rslsync.exe
+        state: present
+        enabled: yes
+        run_level: highest
+        start_time: "10:00"
+        frequency: daily
+        days_of_week: "*"
