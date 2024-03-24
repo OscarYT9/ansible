@@ -6,7 +6,8 @@
       win_scheduled_task:
         name: "Resilio Sync abrir2"
         description: "Ejecutar Resilio Sync a las 10:00 AM todos los días"
-        executable: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"  # Reemplaza con la ruta correcta de rslsync.exe
+        executable: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
+        arguments: ""
         state: present
         enabled: yes
         run_level: highest
