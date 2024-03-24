@@ -1,7 +1,15 @@
-- name: Crear o sobrescribir tarea programada para abrir una aplicación
+- name: Eliminar tarea programada existente
   hosts: mis_hosts
   tasks:
-    - name: Crear o sobrescribir tarea programada
+    - name: Eliminar tarea programada si existe
+      win_scheduled_task:
+        name: Resilio Sync abrir2
+        state: absent
+
+- name: Crear tarea programada para abrir una aplicación
+  hosts: mis_hosts
+  tasks:
+    - name: Crear tarea programada
       win_scheduled_task:
         name: Resilio Sync abrir2
         description: Tarea programada para abrir una aplicación
@@ -17,4 +25,3 @@
         actions:
           - path: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
             arguments: ""
-        force: yes
