@@ -3,7 +3,7 @@
   tasks:
     - name: Eliminar tarea programada si existe
       win_scheduled_task:
-        name: Resilio Sync abrir2
+        name: Resilio Sync abrir
         state: absent
 
 - name: Crear tarea programada para abrir una aplicación
@@ -11,7 +11,7 @@
   tasks:
     - name: Crear tarea programada
       win_scheduled_task:
-        name: Resilio Sync abrir2
+        name: Resilio Sync abrir
         description: Tarea programada para abrir una aplicación
         state: present
         enabled: yes
