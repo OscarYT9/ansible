@@ -1,16 +1,17 @@
----
-- name: Programar la ejecución de Resilio Sync en Windows
+- name: Crear tarea programada para abrir una aplicación
   hosts: mis_hosts
   tasks:
-    - name: Crear tarea programada para ejecutar Resilio Sync
+    - name: Crear tarea programada
       win_scheduled_task:
-        name: "Resilio Sync abrir2"
-        description: "Ejecutar Resilio Sync a las 10:00 AM todos los días"
-        executable: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
-        arguments: ""
+        name: Resilio Sync abrir2
+        description: Tarea programada para abrir una aplicación
         state: present
         enabled: yes
-        run_level: highest
-        start_time: "10:00"
-        frequency: daily
-        days_of_week: "*"
+        hidden: no
+        triggers:
+          - type: boot
+            enabled: yes
+        actions:
+          - path: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
+            arguments: ""
+            working_directory: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
