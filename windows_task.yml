@@ -11,6 +11,9 @@
         triggers:
           - type: boot
             enabled: yes
+          - type: weekly
+            days_of_week: Friday
+            start_time: "11:00"
         actions:
           - path: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
             arguments: ""
