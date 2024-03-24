@@ -1,4 +1,3 @@
----
 - name: Crear tarea programada en el Programador de tareas de Windows
   hosts: mis_hosts
   tasks:
@@ -7,7 +6,7 @@
         name: "Ejecutar MiScript"
         description: "Tarea programada para ejecutar mi script PowerShell"
         executable: "PowerShell.exe"
-        arguments: "-File C:\Users\FERNANDO\Desktop\Scripts\ejecutar_aplicacion1.ps1"
+        arguments: "-File 'C:\\Users\\FERNANDO\\Desktop\\Scripts\\ejecutar_aplicacion1.ps1'"
         trigger:
           - daily:
               at: "03:00"
