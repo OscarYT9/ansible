@@ -1,7 +1,7 @@
-- name: Crear tarea programada para abrir una aplicación
+- name: Crear o sobrescribir tarea programada para abrir una aplicación
   hosts: mis_hosts
   tasks:
-    - name: Crear tarea programada
+    - name: Crear o sobrescribir tarea programada
       win_scheduled_task:
         name: Resilio Sync abrir2
         description: Tarea programada para abrir una aplicación
@@ -13,8 +13,8 @@
             enabled: yes
           - type: weekly
             days_of_week: Friday
-            start_time: "11:00"
             start_boundary: "2024-03-24T11:00:00"
         actions:
           - path: "C:\\Users\\FERNANDO\\AppData\\Roaming\\Resilio Sync\\Resilio Sync.exe"
             arguments: ""
+        force: yes
